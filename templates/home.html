@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ <div class="home">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center heading">Smart Way to search</h2>
+                <p class="text-center">A software system that is designed to search for information on the World Wide Web. </p>
+            </div>
+            <form class="form-inline" method="post">
+                <div class="form-group"><input class="form-control" type="search" name="search" placeholder="Search here ..." style="width:324px;"></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">&nbsp;<i class="fa fa-search"></i></button></div>
+            </form>
+            <div class="result">
+                <p class="text-center">Hi there ....</p>
+            </div>
+        </div>
+ </div>
+{% endblock %}

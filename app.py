@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import wikipedia as wp
+import speech_recognition as sr
 
 app = Flask(__name__)
 
@@ -9,8 +10,14 @@ def index():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
+    '''r=sr.Recognizer()
+    mic = sr.Microphone()
+    with mic as source:
+        audio=r.listen(source)
+    return r.recognize_google(audio)'''
     text = request.form['search']
-    return wp.summary(text,sentences=2)
+    #return wp.summary(r.recognize_google(audio),sentences=2)
+    return render_template('home.html',answer = wp.summary(text,sentences=2))
 
 @app.route('/home', methods=['POST'])
 def home_my_form_post():
@@ -31,7 +38,7 @@ def howitworks():
 
 @app.route('/contact')
 def contact():
-    return render_template('404.html')
+    return render_template('contact.html')
 
 @app.route('/auth')
 def auth():

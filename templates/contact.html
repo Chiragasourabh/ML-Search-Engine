@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container" id="info-container">
+        <div class="row">
+            <div class="col-md-12 contact-heading">
+                <h2 class="text-center">Contact Us</h2>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6" id="contact-box">
+                <p id="contact-text">Feel free to contact. Suggestions. Questions. Praises. Everything Welcomed.</p>
+                <div class="info-box"><i class="fa fa-map-marker my-info-icons"></i><span class="text-uppercase text-info"></span><span>Department of CSE<br>   Sri Venkateshwara College of Engineering <br>International Airport Road, NH 7, <br>Bengaluru, Karnataka 562157</span></div>
+                <div class="info-box"><i class="fa fa-envelope my-info-icons"></i><span class="text-uppercase text-info"></span><span>chiragasourabh@live.com </span></div>
+                <div class="info-box"><i class="fa fa-phone-square my-info-icons"></i><span class="text-uppercase text-info"></span><span>+91 8553617237 </span></div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 site-form">
+                <form id="my-form">
+                    <div class="form-group"><label class="sr-only" for="firstname">Name</label><input class="form-control" type="text" name="name" required="" placeholder="Name" autofocus="" id="name"></div>
+                    <div class="form-group"><label class="sr-only" for="phonenumber">Phone Number</label><input class="form-control" type="tel" name="phonenumber" required="" placeholder="Phone" id="phonenumber"></div>
+                    <div class="form-group"><label class="sr-only" for="email">Email Address</label><input class="form-control" type="text" name="email" required="" placeholder="Email" id="email"></div>
+                    <div class="form-group"><label class="sr-only" for="messages">Last Name</label><textarea class="form-control" rows="6" name="messages" required="" placeholder="Message"></textarea></div>
+					<button class="btn btn-primary" type="submit" id="form-btn">Send</button></form>
+            </div>
+        </div>
+</div>
+{% endblock %}

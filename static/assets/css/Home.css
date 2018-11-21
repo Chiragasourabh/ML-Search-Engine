@@ -47,30 +47,62 @@
 }
 
 .home form .btn {
-  padding:16px 32px;
+  padding:6px 8px;
   border:none;
   background:none;
   box-shadow:none;
   text-shadow:none;
   opacity:0.9;
-  text-transform:uppercase;
   font-weight:bold;
   font-size:13px;
   letter-spacing:0.4px;
   line-height:1;
 }
 
+.home form .mic {
+  padding:6px 8px;
+  border:none;
+  background:none;
+  box-shadow:none;
+  text-shadow:none;
+  opacity:0.9;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:0.4px;
+  line-height:1;
+  margin-right:10px;
+}
+
 .home form .btn:hover {
   opacity:1;
+}
+
+.home form .mic:hover {
+  opacity:1;
+  cursor: pointer;
 }
 
 .home form .btn:active {
   transform:translateY(1px);
 }
 
-.home form .btn-primary {
-  background-color:#055ada !important;
-  color:#fff;
+.home form .fa-microphone {
+  color:inherit;
+  font-size:28px;
+}
+
+.home form .fa-search {
+  color:#055ada;
+  font-size:28px;
+}
+
+.home form .btn-mic {
+  color:#055ada;
+  outline:none !important;
+}
+
+.home form .btn-search {
+  color:#055ada;
   outline:none !important;
 }
 

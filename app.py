@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import wikipedia as wp
-import speech_recognition as sr
+#import speech_recognition as sr
 
 app = Flask(__name__)
 
@@ -42,7 +42,17 @@ def contact():
 
 @app.route('/auth')
 def auth():
-    return render_template('404.html')
+    return render_template('login.html')
+
+@app.route('/register')
+def Register():
+    return render_template('register.html')
+
+@app.route('/auth', methods=['POST'])
+def login_post():
+    username = request.form['txtEmail']
+    password = request.form['txtPassword']
+    return username
 
 
 

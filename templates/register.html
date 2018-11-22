@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row register-form">
+        <div class="col-md-8 offset-md-2 justify-content-center">
+            <form class="custom-form">
+                <h2 class="text-center register-heading">Register</h2>
+                <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Name </label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="text"></div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Email </label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="email"></div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Password </label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="password"></div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Repeat Password </label></div>
+                    <div class="col-sm-6 input-column"><input class="form-control" type="password"></div>
+                </div>
+                <button class="btn  btn-primary submit-button text-center" type="button">Register</button>
+              </form>
+        </div>
+    </div>
+    {% endblock %}

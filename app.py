@@ -1,7 +1,7 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash
 import wikipedia as wp
 import config
-import speech_recognition as sr
+#import speech_recognition as sr
 
 app = Flask(__name__)
 
@@ -50,7 +50,12 @@ def auth():
 def login_post():
     email = request.form['txtEmail']
     password = request.form['txtPassword']
-    return str(config.signin_with_email_and_password(email,password))
+    try:
+        u=config.signin_with_email_and_password(email,password)
+    except:
+        flash("Error Login")
+    return u
+
 
 @app.route('/register')
 def Register():
@@ -75,6 +80,10 @@ def ResetPassword_post():
 @app.route('/wiki')
 def wikitest():
 	return wp.summary("who invented facebook?", sentences=2)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html')
 
 if __name__ == '__main__':
     app.run(debug = True)

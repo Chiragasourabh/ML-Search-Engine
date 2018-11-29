@@ -1,9 +1,10 @@
-from flask import Flask, request, render_template, flash
+from flask import Flask, request, render_template, flash, redirect, url_for, session
 import wikipedia as wp
 import config
-#import speech_recognition as sr
 
 app = Flask(__name__)
+
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @app.route('/')
 def index():
@@ -36,6 +37,20 @@ def howitworks():
 def contact():
     return render_template('contact.html')
 
+
+@app.route('/contact', methods=['POST'])
+def contact_form_post():
+    name = request.form['name']
+    mobile = request.form['phonenumber']
+    email = request.form['email']
+    messageData = request.form['messages']
+    try:
+        config.sendMessage(name,mobile,email,messageData)
+        flash("Hey "+ name +"! Your Message Has Been Sent Successfully .","success")
+    except:
+        flash("Hey "+ name +"! Sorry ... Some Internal Problem","danger")
+    return redirect(url_for('contact'))
+
 @app.route('/auth')
 def auth():
     return render_template('login.html')
@@ -45,11 +60,13 @@ def auth():
 def login_post():
     email = request.form['txtEmail']
     password = request.form['txtPassword']
-    try:
-        u=config.signin_with_email_and_password(email,password)
-    except:
-        flash("Error Login")
-    return u
+    #try:
+    #    u=config.signin_with_email_and_password(email,password)
+    #except:
+    session['username'] = email
+    flash(session['username'],"danger")
+    return redirect(url_for('auth'))
+    #return u
 
 
 @app.route('/register')

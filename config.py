@@ -10,6 +10,7 @@ config = {
 
 firebase =  pyrebase.initialize_app(config)
 auth=firebase.auth()
+db = firebase.database()
 
 def register_with_email_and_password(email,password):
     try:
@@ -28,3 +29,12 @@ def signin_with_email_and_password(email,password):
 
 def reset_password_with_email(email):
         auth.send_password_reset_email(email)
+
+def sendMessage(name,phoneNum,email,message):
+    data = {
+    "name": name ,
+    "phone": phoneNum ,
+    "email": email ,
+    "message": message
+    }
+    db.child("messages").push(data)

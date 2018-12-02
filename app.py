@@ -22,7 +22,7 @@ def my_form_post():
             config.historify(session['id'],text,request.remote_addr)
             return render_template('home.html',answer=ans , login=True)
         else:
-            flash("Login to Save History and to get better search results")
+            flash("Login to Save History and to get better search results","info")
             config.historify("Annonymous",text,request.remote_addr)
             return render_template('home.html',answer=ans , login=False)
     except:
@@ -36,10 +36,10 @@ def home_my_form_post():
     try:
         ans = wp.summary(text,sentences=2)
         if(config.isLoggedIn()):
-            config.historify(text,request.remote_addr)
+            config.historify(session['id'],text,request.remote_addr)
             return render_template('home.html',answer=ans , login=True)
         else:
-            flash("Login to Save History and to get better search results")
+            flash("Login to Save History and to get better search results","info")
             return render_template('home.html',answer=ans , login=False)
     except:
         return render_template('home.html',answer = "Oh Ohh ... Sorry. I couldnt get that . will get that in next version", login=config.isLoggedIn())

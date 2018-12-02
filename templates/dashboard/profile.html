@@ -1,0 +1,72 @@
+{% extends 'dashboard/layout.html' %}
+{% block dashboard %}
+
+<div class="container rummage-profile">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img class="profile-img text-center" src="{{ url_for('static',filename='assets/icons/profile.png') }}" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{name}}
+                                    </h5>
+                                    <h6>
+                                        {{tag}}
+                                    </h6>
+                                    <p class="proile-rating">SCORE : <span>{{score}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="profile-edit-btn"href="profile/changepassword">Change Password</a></<input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{id}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{phone}}</p>
+                                            </div>
+                                        </div>
+
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+{% endblock %}

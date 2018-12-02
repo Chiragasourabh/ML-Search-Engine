@@ -92,3 +92,17 @@ div#contact-box {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+
+.results tr[visible='false'], .no-result {
+  display:none;
+}
+
+.results tr[visible='true'] {
+  display:table-row;
+}
+
+.counter {
+  padding:8px;
+  color:#ccc;
+}

@@ -1,0 +1,34 @@
+{% extends 'dashboard/layout.html' %}
+{% block dashboard %}
+<div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="What you looking for?">
+</div>
+<span class="counter pull-right"></span>
+<table class="table table-hover table-bordered results">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th class="col-md-5">Query</th>
+      <th class="col-md-4">Date & Time</th>
+      <th class="col-md-3">IP Address</th>
+    </tr>
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in json %}
+    <tr>
+      <th scope="row">{{loop.index}}</th>
+      <td>{{json[row]['query']}}</td>
+      <td>{{json[row]['time']}}</td>
+      <td>{{json[row]['ip']}}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/Table-with-search.js') }}"></script>
+{% endblock %}

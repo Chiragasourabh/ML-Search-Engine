@@ -105,7 +105,7 @@ def register_post():
         flash("Registration Successful. Please Check mailbox to Varify your email and login here ","success")
         return redirect(url_for('auth'))
     else:
-        flash("Registration Failed. Account already exist with email id : "+email+"","danger")
+        flash("Registration Failed. ","danger")
         return redirect(url_for('Register'))
 
 

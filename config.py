@@ -2,12 +2,12 @@ import pyrebase
 from flask import session,flash
 from datetime import datetime
 config = {
-    "apiKey": "AIzaSyAyMHEsX7egWQYHQzNmKtdy8xGkd1cXBXE",
+    "apiKey": "##########################################",
     "authDomain": "rummage-1.firebaseapp.com",
     "databaseURL": "https://rummage-1.firebaseio.com",
     "projectId": "rummage-1",
     "storageBucket": "rummage-1.appspot.com",
-    "messagingSenderId": "335274514402"
+    "messagingSenderId": "###################"
 }
 
 firebase =  pyrebase.initialize_app(config)
